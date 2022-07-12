@@ -42,7 +42,6 @@
                 <div 
                     v-for="(picture,i) in pictures" 
                     :class="'col-2' + (active===i ? ' active' : '')"
-                    @click="goToPicture(i)"
                 >
                     <img :src="picture.url" class="d-block img-thumbnail img-fluid">
                 </div>

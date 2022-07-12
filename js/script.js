@@ -32,5 +32,20 @@ const root = new Vue ({
         ],
         active: 0
     },
-    method:{}
+    methods:{
+        prev(){
+            if(this.active > 0){
+                this.active--
+            } else{
+                this.active = this.pictures.length - 1 
+            }
+        },
+        next(){
+            if(this.active < this.pictures.length - 1 ){
+                this.active++
+            } else{
+                this.active = 0
+            }
+        }
+    }
 })

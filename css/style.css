@@ -1,0 +1,20 @@
+.container{
+    height: 600px;
+    width: 900px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+figure{
+    position: relative;
+}
+figure .text{
+    position: absolute;
+    left: 1em;
+    right: 1em;
+    top: 1em;
+    text-align: end;
+    color: white;
+    text-shadow: 2px 3px 2px #000000;
+}

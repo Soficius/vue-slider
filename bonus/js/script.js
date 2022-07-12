@@ -30,7 +30,8 @@ const root = new Vue ({
                 description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.',
             },
         ],
-        active: 0
+        active: 0,
+        interval: -1
     },
     methods:{
         prev(){
@@ -49,6 +50,14 @@ const root = new Vue ({
         },
         goToPicture(i){
             this.active = i
-        }
+        },
+        startShow(){
+            if(this.interval === -1){
+                this.interval = setInterval(()=>this.next(), 3 * 1000)
+            }
+        },
+    },
+    mounted(){
+        this.startShow()
     }
 })

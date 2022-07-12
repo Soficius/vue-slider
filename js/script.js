@@ -46,6 +46,9 @@ const root = new Vue ({
             } else{
                 this.active = 0
             }
+        },
+        goToPicture(i){
+            this.active = i
         }
     }
 })

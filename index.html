@@ -15,30 +15,40 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="root" class="container">
-        <div class="carousel" >
-            <div class="carousel-inner">
-                <div v-for="(picture,i) in pictures" :class="'carousel-item' + (active===i ? ' active' : '')">
-                    <figure>
-                        <div class="text">
-                            <h2>{{picture.title}}</h2>
-                            <p>{{picture.description}}</p>
-                        </div>
-                        <img :src="picture.url" alt="" class="d-block w-100">
-                    </figure>
+    <div id="root">
+        <div class="container">
+            <div class="carousel" >
+                <div class="carousel-inner">
+                    <div v-for="(picture,i) in pictures" :class="'carousel-item' + (active===i ? ' active' : '')">
+                        <figure>
+                            <div class="text">
+                                <h2>{{picture.title}}</h2>
+                                <p>{{picture.description}}</p>
+                            </div>
+                            <img :src="picture.url" alt="" class="d-block w-100">
+                        </figure>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" @click="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" @click="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="row flex-nowrap overflow-auto justify-content-center indicators">
+                <div 
+                    v-for="(picture,i) in pictures" 
+                    :class="'col-2' + (active===i ? ' active' : '')"
+                    @click="goToPicture(i)"
+                >
+                    <img :src="picture.url" class="d-block img-thumbnail img-fluid">
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" @click="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" @click="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
     </div>
-
     <!-- script -->
     <script src="js/script.js"></script>
 </body>

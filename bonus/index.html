@@ -16,7 +16,7 @@
 </head>
 <body>
     <div id="root">
-        <div class="container">
+        <div class="container" @mouseenter="stopShow()" @mouseleave="startShow()">
             <div class="carousel" >
                 <div class="carousel-inner">
                     <div v-for="(picture,i) in pictures" :class="'carousel-item' + (active===i ? ' active' : '')">

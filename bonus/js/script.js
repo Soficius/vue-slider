@@ -56,6 +56,12 @@ const root = new Vue ({
                 this.interval = setInterval(()=>this.next(), 3 * 1000)
             }
         },
+        stopShow(){
+            if(this.interval > -1){
+                clearInterval(this.interval)
+                this.interval = -1
+            }
+        }
     },
     mounted(){
         this.startShow()
